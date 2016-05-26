@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add|Edit cources and batches</title>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body ng-app="mainApp">
+    <div ng-controller="editCtrl">
+
+        <div class="row" style="margin-top:30px;">
+
+            <div class="container">
+                <label for="inputEmail3" class="col-sm-2 control-label">Courses</label>
+                <br>
+                <br>
+                <form class="col-sm-offset-2 form-horizontal" id="courcesForm">
+                    <div ng-repeat="val in cources">
+                        <div class="form-group col-sm-10">
+                            <input type="text" class="form-control" value={{val.name}} ng-model="val.name">
+                            <textarea type="text" class="form-control" rows=3 ng-model="val.about">{{val.about}}</textarea>
+
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-10">
+                        <span style="float:right" class="glyphicon glyphicon-plus
+" ng-click="addCource()"></span>
+                        <span style="float:right" class="glyphicon glyphicon-minus
+" ng-click="subCource()"></span>
+                    </div>
+                </form>
+                <button type="button" ng-click="putCources()" class="btn btn-default">Submit</button>
+            </div>
+
+
+            <div class="container">
+                <label for="inputEmail3" class="col-sm-2 control-label">Batches</label>
+                <br>
+                <br>
+                <form class="col-sm-offset-2 form-horizontal" id="courcesForm">
+                    <div ng-repeat="val in batches">
+                        <div class="form-group col-sm-10">
+                            <input type="text" class="form-control" value={{val.name}} ng-model=val.name>
+                            <textarea type="text" class="form-control" rows=3 ng-model="val.about">{{val.about}}</textarea>
+
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-10">
+                        <span style="float:right" class="glyphicon glyphicon-plus
+" ng-click="addBatches()"></span>
+                        <span style="float:right" class="glyphicon glyphicon-minus
+" ng-click="subBatches()"></span>
+                    </div>
+                </form>
+                <button type="button" ng-click="putBatches()" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
+    <!-- Angular -->
+    <script src="angular/angular.min.js"></script>
+
+    <script src="js/mainApp.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
